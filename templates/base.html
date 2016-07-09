@@ -45,14 +45,16 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Hello!</h1>
-            <p class="lead">何でも私に話しかけてください。</p>
+            {% if state == "GET" %}
+              <h1 class="cover-heading">私はLaBoX</h1>
+            {% end %}
+            <p class="lead">{{ message }}</p>
             <p class="lead">
-              <input id="lefile" type="file" style="display:none">
+              <form name="webface" method="post" action="/">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="ok labox...">
+                <input type="text" name="message" class="form-control" placeholder="ok labox...">
                 <span class="input-group-btn">
-                  <button type="button" class="btn btn-default" onclick="#">Send</button>
+                  <button type="submit" class="btn btn-default">Send</button>
                 </span>
               </div>
             </p>
@@ -76,5 +78,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+    <script src="{{ static_url("js/labox.js") }}"></script>
   </body>
 </html>

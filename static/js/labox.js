@@ -1,0 +1,1 @@
+document.webface.message.focus();
