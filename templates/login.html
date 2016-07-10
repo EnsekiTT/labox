@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}LaBox-Login{% end %}
+
+{% block content %}
+  <h1 class="cover-heading">Loginしてください</h1>
+  <p class="lead">
+    <form name="login" class="form-signin" method="post" action="/login">
+      <p class="lead"><input type="text" name="user" class="form-control" placeholder="Username">
+        <input type="password" name="password" class="form-control" placeholder="Password"></p>
+      <p class="lead"><button type="submit" name="login" class="btn btn-lg btn-default">Login</button></p>
+    </form>
+  </p>
+{% end %}

@@ -9,13 +9,14 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ static_url("images/favicon.ico") }}">
 
-    <title>LaBoX web face</title>
+    <title>{% block title %}LaBoX web face{% end %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ static_url("css/bootstrap.min.css") }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ static_url("css/cover.css")}}" rel="stylesheet">
+    <link href="{{ static_url("css/labox.css")}}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -39,25 +40,17 @@
                   <li class="active"><a href="/">Home</a></li>
                   <li><a href="#">Docs</a></li>
                   <li><a href="#">APIs</a></li>
+
+                  <li><a href="login">Login</a></li>
+                  <li><a href="logout">Logout</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            {% if state == "GET" %}
-              <h1 class="cover-heading">私はLaBoX</h1>
+            {% block content %}
             {% end %}
-            <p class="lead">{{ message }}</p>
-            <p class="lead">
-              <form name="webface" method="post" action="/">
-              <div class="input-group">
-                <input type="text" name="message" class="form-control" placeholder="ok labox...">
-                <span class="input-group-btn">
-                  <button type="submit" class="btn btn-default">Send</button>
-                </span>
-              </div>
-            </p>
           </div>
 
           <div class="mastfoot">

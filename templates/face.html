@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Face{% end %}
+
+{% block content %}
+  <h1 class="cover-heading">私がLaBoXです</h1>
+  <p class="lead">{{ message }}</p>
+  <p class="lead">
+    <form name="webface" method="post" action="/face">
+    <div class="input-group">
+      <input type="text" name="message" class="form-control" placeholder="ok labox...">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">Send</button>
+      </span>
+    </div>
+  </p>
+{% end %}
