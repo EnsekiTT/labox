@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}LaBox-sign in{% end %}
+
+{% block content %}
+  <h1 class="cover-heading">Sign upしてください</h1>
+  <p class="lead">
+    <form name="signup" class="form-signin" method="post" action="/signup">
+      <p class="lead">
+        <input type="text" name="name" class="form-control" placeholder="Your account name">
+        <input type="text" name="mail" class="form-control" placeholder="Your email"></p>
+      <p class="lead">
+        <input type="password" name="password" class="form-control" placeholder="Create your password">
+        <input type="password" name="repassword" class="form-control" placeholder="Confirm your password"></p>
+      <p class="lead"><button type="submit" name="signin" class="btn btn-lg btn-default">Next</button></p>
+    </form>
+  </p>
+{% end %}
